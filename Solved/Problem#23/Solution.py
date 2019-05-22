@@ -50,3 +50,7 @@ def justify(arr, k):
 
     for i in lst:
         print(i)
+
+
+# I know that there is lot of errors and I will try to improve the code as
+# soon as possible
