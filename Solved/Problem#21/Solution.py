@@ -1,15 +1,16 @@
 # Solution part
 
 def remove(lst, k):
-    indx = len(lst) - k # calculate the last k th element index
-    cur_node = lst.head
-    cur_indx = 0
-    if k == 0:
+    if k == len(lst):
         lst.head = lst.head.nxt_node
-    while cur_indx+1 != indx:
-        cur_node = cur_node.nxt_node
-        cur_indx += 1
-    cur_node.nxt_node = cur_node.nxt_node.nxt_node
+    else:
+        indx = len(lst) - k # calculate the last k th element index
+        cur_node = lst.head.nxt_node
+        cur_indx = 1
+        while cur_indx != indx:
+            cur_node = cur_node.nxt_node
+            cur_indx += 1
+        cur_node.nxt_node = cur_node.nxt_node.nxt_node
 
 
 
@@ -52,6 +53,6 @@ for i in range(10):
     lnk_lst.add(i)
 print('before remove')
 lnk_lst.view()
-remove(lnk_lst, 7)
+remove(lnk_lst, 10)
 print('\nafter remove')
 lnk_lst.view()
