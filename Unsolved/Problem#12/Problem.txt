@@ -1,4 +1,5 @@
-Write a program that processes the following queries on a Binary Search Tree:
+Write a program that processes the following queries on a
+Binary Search Tree:
 i x: Insert x in the BST
 d x: Delete x from the BST
 
