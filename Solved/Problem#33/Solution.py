@@ -2,40 +2,14 @@
 
 
 def find_second(root):
-     # fl = first largest ; sl = second largest
-    fl, sl = __find_second(root, root.value, None)
-    return sl
-
-def __find_second(cur_node, fl, sl):
-    if cur_node.value > fl:
-        sl = fl
-        fl = cur_node.value
-    elif sl == None:
-        sl = cur_node.value
-    elif cur_node.value > sl:
-        sl = cur_node.value
-
-    l_fl = l_sl = None # l_fl = left first largest, l_sl = left second largest
-    r_fl = r_sl = None # r_fl = right first largest, r_sl = right second largest
-
+    cur_node = root
+    prv_node = None
+    while cur_node.right_node != None:
+        prv_node = cur_node
+        cur_node = cur_node.right_node
     if cur_node.left_node != None:
-        l_fl, l_sl = __find_second(cur_node.left_node, fl, sl)
-    if cur_node.right_node != None:
-        r_fl, r_sl = __find_second(cur_node.right_node, fl, sl)
-    lst = [fl, sl] # create a list to compare all the values, using max() and
-                   # pop() function to find the curent second largest value
-    if l_fl != None:
-        lst += [l_fl, l_sl]
-    if r_fl != None:
-        lst += [r_fl, r_sl]
-    indx = lst.index(max(lst)) # find the index of the current largest value in
-                               # in the list
-    fl = lst.pop(indx) # pop up the largest value from the list and assign it
-                       # to the fl (first largest) variable
-    sl = max(lst) # because we pop up the largest val form the list so it's the
-                  # second largest val
-    return fl, sl
-
+        return cur_node.left_node.value
+    return prv_node.value
 
 # Testing part
 
