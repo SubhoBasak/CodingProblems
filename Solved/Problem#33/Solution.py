@@ -43,7 +43,7 @@ class Tree:
                 self.__add(cur_node.right_node, value)
 
 tree = Tree()
-arr = [23, 12, 31, 4, 15, 29, 35, 2, 7, 25, 30, 33]
+arr = [57, 17, 23, 97, 52, 64, 71, 1, 99, 5]
 
 for i in arr:
     tree.add(i)
